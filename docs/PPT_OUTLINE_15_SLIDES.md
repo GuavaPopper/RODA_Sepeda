@@ -218,14 +218,14 @@
 **Tech Stack:**
 
 **Frontend** 🎨
-- Framework: React.js / Vue.js
-- Styling: Tailwind CSS / Bootstrap
+- Framework: React.js (Next.js)
+- Styling: Tailwind CSS
 - Build: Vite / Webpack
 
 **Backend** ⚙️
-- Server: Node.js (Express) / PHP (Laravel)
+- Server: Node.js (Express)
 - API: RESTful API
-- Auth: JWT (JSON Web Token)
+- Auth: Supabase Auth
 
 **Database** 💾
 - Primary: PostgreSQL 
