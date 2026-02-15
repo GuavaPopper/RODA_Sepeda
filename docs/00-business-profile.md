@@ -46,6 +46,10 @@
 - Sulit tahu peak time, sepeda favorit, dll
 - Tidak ada customer database terstruktur
 
+❌ **Rekap Data**
+- Rekap data masih manual, belum terotomatisasi
+
+  
 ## Opportunity untuk Website
 
 ✅ **Katalog Online**
