@@ -228,7 +228,7 @@
 - Auth: JWT (JSON Web Token)
 
 **Database** 💾
-- Primary: PostgreSQL / MySQL
+- Primary: PostgreSQL 
 - Cache: Redis (optional)
 
 **Hosting & Infrastructure** ☁️
@@ -240,12 +240,12 @@
 **Third-Party Services** 🔌
 - Payment: Midtrans (QRIS, e-wallet, transfer)
 - Email: SendGrid / Mailgun
-- Storage: Cloudinary (image hosting)
+- Storage: Supabase Storage (image hosting)
 
 **Development Tools** 🛠️
 - Version Control: Git + GitHub
 - Design: Figma
-- Project Management: Trello / Notion
+- Project Management: Notion
 - API Testing: Postman
 
 **Visual:**
