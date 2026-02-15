@@ -263,6 +263,8 @@
 **Estimasi Biaya:**
 
 **Development (One-time):**
+
+**Opsi 1 - Profesional (Market Rate):**
 | Item | Estimasi |
 |------|----------|
 | UI/UX Design | Rp 2.000.000 - 5.000.000 |
@@ -270,6 +272,26 @@
 | Backend Development | Rp 7.000.000 - 15.000.000 |
 | Testing & QA | Rp 1.500.000 - 3.000.000 |
 | **TOTAL** | **Rp 15.500.000 - 33.000.000** |
+
+**Opsi 2 - Template + Custom (Rekomendasi):**
+| Item | Estimasi |
+|------|----------|
+| UI/UX (Template + Custom) | Rp 500.000 - 1.000.000 |
+| Frontend Development | Rp 2.500.000 - 3.500.000 |
+| Backend Development (BaaS) | Rp 3.000.000 - 4.000.000 |
+| Testing (Self-test) | Rp 0 - 500.000 |
+| **TOTAL** | **Rp 6.000.000 - 9.000.000** |
+
+**Opsi 3 - Tim Mahasiswa:**
+| Item | Estimasi |
+|------|----------|
+| UI/UX (Mahasiswa) | Rp 1.000.000 - 1.500.000 |
+| Frontend Dev (Mahasiswa) | Rp 3.000.000 - 4.000.000 |
+| Backend Dev (Mahasiswa) | Rp 4.000.000 - 5.000.000 |
+| Testing | Rp 500.000 - 1.000.000 |
+| **TOTAL** | **Rp 8.500.000 - 11.500.000** |
+
+**💡 Untuk project ini, direkomendasikan Opsi 2 (Template + Custom) dengan budget Rp 6-9 juta**
 
 **Operational (Bulanan):**
 | Item | Harga |
