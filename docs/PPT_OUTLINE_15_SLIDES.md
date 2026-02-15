@@ -232,15 +232,15 @@
 - Cache: Redis (optional)
 
 **Hosting & Infrastructure** ☁️
-- Domain: (Domainesia).com / .id (Rp 150-300k/tahun)
-- Hosting: VPS (DigitalOcean) ~$5-10/bulan
+- Domain: .com (Rp 150.000/tahun) atau .id (Rp 300.000/2 tahun)
+- Hosting: VPS DigitalOcean Basic ($6/bulan = ~Rp 96.000/bulan)
 - SSL: Let's Encrypt (gratis)
-- CDN: Cloudflare (free tier)
+- CDN: Cloudflare (free tier - gratis)
 
 **Third-Party Services** 🔌
-- Payment: Midtrans (QRIS, e-wallet, transfer)
-- Email: SendGrid
-- Storage: Supabase Storage (image hosting)
+- Payment: Midtrans (fee per transaksi, no monthly fee)
+- Email: SendGrid (free tier 100 email/hari)
+- Storage: Supabase Storage / Cloudinary (free tier)
 
 **Development Tools** 🛠️
 - Version Control: Git + GitHub
@@ -272,9 +272,31 @@
 | **TOTAL** | **Rp 15.500.000 - 33.000.000** |
 
 **Operational (Bulanan):**
-- Domain: ~Rp 20.000/bulan
-- Hosting VPS: Rp 75.000 - 150.000
-- Total: ~Rp 100.000 - 200.000/bulan
+| Item | Harga |
+|------|-------|
+| Domain .com | Rp 12.500/bulan (Rp 150.000/tahun ÷ 12) |
+| Hosting VPS (DigitalOcean Basic) | Rp 96.000/bulan ($6/bulan) |
+| SSL Certificate | Gratis (Let's Encrypt) |
+| CDN (Cloudflare) | Gratis (free tier) |
+| Email Service (SendGrid) | Gratis (free tier 100 email/hari) |
+| Image Storage (Cloudinary/Supabase) | Gratis (free tier) |
+| **TOTAL** | **Rp 108.500/bulan** |
+
+**Per Transaksi (Midtrans Payment Gateway):**
+| Metode Pembayaran | Biaya |
+|-------------------|-------|
+| Virtual Account/Transfer Bank | Rp 4.000/transaksi |
+| QRIS | 0,7% per transaksi |
+| GoPay | 2% per transaksi |
+| ShopeePay | 1,5% per transaksi |
+| Kartu Kredit | 2,9% + Rp 2.000 per transaksi |
+
+*Contoh: Rental Rp 50.000*
+- Via VA/Transfer: Fee Rp 4.000 (8%)
+- Via QRIS: Fee Rp 350 (0,7%)
+- Via GoPay: Fee Rp 1.000 (2%)
+
+*Note: Fee payment gateway ditanggung merchant (owner), bisa dibebankan ke customer*
 
 **Timeline Proyek:**
 

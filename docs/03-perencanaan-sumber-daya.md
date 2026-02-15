@@ -87,51 +87,109 @@
 ### 2. Hosting & Infrastructure
 
 #### Domain
-- **Biaya**: Rp 150.000 - 300.000/tahun
-- **Provider**: Niagahoster, Rumahweb, atau Cloudflare
+- **Biaya**: 
+  - .com: Rp 150.000/tahun (~Rp 12.500/bulan)
+  - .id: Rp 300.000/2 tahun (~Rp 12.500/bulan)
+- **Provider**: Niagahoster, Domainesia, Cloudflare Registrar
 
 #### Hosting
-**Option 1 - Shared Hosting** (Budget rendah)
+**Option 1 - Shared Hosting** (Budget rendah, traffic rendah)
 - Provider: Niagahoster, Hostinger
 - Biaya: ~Rp 20.000 - 50.000/bulan
-- Cocok untuk: Traffic rendah-medium
+- Cocok untuk: MVP testing, traffic <1000 visit/hari
+- Limitasi: Resource terbatas, tidak scalable
 
-**Option 2 - VPS** (Rekomendasi)
-- Provider: DigitalOcean, Vultr, AWS Lightsail
-- Biaya: ~$5-10/bulan (Rp 75.000 - 150.000)
-- Cocok untuk: Full control, scalable
+**Option 2 - VPS** (Rekomendasi untuk produksi)
+- **DigitalOcean Basic Droplet**
+  - Spec: 1 vCPU, 1GB RAM, 25GB SSD, 1TB transfer
+  - Biaya: $6/bulan (~Rp 96.000/bulan)
+- **Vultr Cloud Compute**
+  - Spec: 1 vCPU, 1GB RAM, 25GB SSD, 1TB transfer
+  - Biaya: $6/bulan (~Rp 96.000/bulan)
+- Cocok untuk: Full control, scalable, production-ready
+- Location: Singapore (latency rendah untuk Indonesia)
 
-**Option 3 - Cloud Platform**
+**Option 3 - Cloud Platform** (Modern deployment)
 - Vercel/Netlify (frontend) + Railway/Render (backend)
-- Biaya: Free tier atau $5-20/bulan
-- Cocok untuk: Modern deployment, auto-scaling
+- Biaya: Free tier atau $5-20/bulan (Rp 80.000 - 320.000)
+- Cocok untuk: Modern stack, auto-scaling, CI/CD otomatis
+
+**Rekomendasi**: VPS DigitalOcean/Vultr - balance antara biaya, performa, dan kontrol
 
 #### SSL Certificate
-- Let's Encrypt (GRATIS)
+- **Let's Encrypt** (GRATIS)
 - Auto-renew dengan Certbot
+- Trusted oleh semua browser modern
 
-#### CDN (Optional tapi recommended)
-- Cloudflare (Free tier cukup bagus)
-- Speed up loading, DDoS protection
+#### CDN (Content Delivery Network)
+**Cloudflare Free Tier** (Rekomendasi)
+- Biaya: GRATIS
+- Features:
+  - CDN global
+  - DDoS protection
+  - SSL/TLS encryption
+  - Bandwidth unlimited
+  - Cache optimization
+- Speed improvement: 30-50% faster loading
 
 ### 3. Third-Party Services
 
 #### Payment Gateway
-- **Midtrans** (lokal, populer)
-  - QRIS, transfer bank, e-wallet, kartu kredit
-  - Fee: ~0.5-3% per transaksi
-- **Xendit** (alternatif)
-- **PayPal** (untuk international, jika perlu)
+**Midtrans** (Lokal, populer, recommended)
+- **Setup Fee**: GRATIS (no monthly subscription)
+- **Transaction Fees**:
+  - Virtual Account/Transfer Bank: Rp 4.000/transaksi
+  - QRIS: 0,7% per transaksi
+  - GoPay: 2% per transaksi
+  - ShopeePay: 1,5% per transaksi
+  - Kartu Kredit: 2,9% + Rp 2.000 per transaksi
+  - Over The Counter (Indomaret/Alfamart): Rp 5.000/transaksi
+  
+- **Contoh Perhitungan** (Rental Rp 50.000):
+  - Via Virtual Account: Fee Rp 4.000 (8% dari nilai transaksi)
+  - Via QRIS: Fee Rp 350 (0,7%)
+  - Via GoPay: Fee Rp 1.000 (2%)
+  - Via Kartu Kredit: Fee Rp 3.450 (2,9% + Rp 2.000)
 
-#### Notifikasi
-- **Email**: SendGrid, Mailgun (free tier available)
-- **WhatsApp**: WA Business API atau Fonnte
-- **SMS**: Twilio, Zenziva
+- **Note**: Fee ditanggung merchant (owner), bisa dibebankan ke customer dengan adjust harga final
 
-#### Storage (untuk foto sepeda)
-- **Option 1**: Local server storage
-- **Option 2**: Cloud storage (AWS S3, Cloudinary)
-  - Rekomendasi: Cloudinary (image optimization otomatis)
+**Alternative**: Xendit, Doku (pricing serupa)
+
+#### Email Service
+**SendGrid Free Tier** (Recommended untuk MVP)
+- Biaya: GRATIS
+- Quota: 100 email/hari (3.000/bulan)
+- Cocok untuk: Notifikasi booking, konfirmasi pembayaran
+- Upgrade: $19.95/bulan untuk 40.000 email/bulan (jika perlu)
+
+**Alternative**: 
+- Mailgun Free: 5.000 email gratis untuk 3 bulan pertama
+- AWS SES: $0.10 per 1.000 email (sangat murah tapi setup lebih kompleks)
+
+#### WhatsApp Notification (Optional)
+**Fonnte**
+- Biaya: Rp 350.000/bulan (unlimited message)
+- Cocok untuk: Reminder booking, konfirmasi, notifikasi pengembalian
+- Alternative: WA Business API (lebih mahal, enterprise-level)
+
+#### Storage Foto/Image
+**Cloudinary Free Tier** (Recommended)
+- Biaya: GRATIS
+- Quota:
+  - 25 GB storage
+  - 25 GB bandwidth/bulan
+  - 25.000 transformations/bulan
+- Features:
+  - Auto image optimization
+  - Responsive image delivery
+  - CDN included
+- Cocok untuk: Foto sepeda, user profile pictures
+- Upgrade: $89/bulan untuk 89 credits (jika perlu lebih)
+
+**Alternative**: 
+- Supabase Storage (2GB free, unlimited bandwidth)
+- AWS S3 + CloudFront (lebih murah untuk traffic tinggi, tapi setup kompleks)
+- Local server storage (gratis tapi butuh backup manual)
 
 ### 4. Development Tools
 
@@ -161,15 +219,48 @@
 ### Biaya Operasional (Recurring)
 
 #### Bulanan
-- Domain: Rp 15.000 - 25.000/bulan (jika dibagi per bulan)
-- Hosting VPS: Rp 75.000 - 150.000
-- SSL: Gratis (Let's Encrypt)
-- Email service: Gratis (free tier) - Rp 50.000
-- **Total/bulan**: Rp 90.000 - 225.000
+| Item | Provider | Harga/Bulan | Keterangan |
+|------|----------|-------------|------------|
+| Domain .com | Domainesia/Niagahoster | Rp 12.500 | Rp 150.000/tahun ÷ 12 bulan |
+| Hosting VPS | DigitalOcean Basic | Rp 96.000 | $6/bulan, 1GB RAM, 25GB SSD, 1TB transfer |
+| SSL Certificate | Let's Encrypt | GRATIS | Auto-renew, trusted |
+| CDN | Cloudflare Free | GRATIS | DDoS protection, unlimited bandwidth |
+| Email Service | SendGrid Free | GRATIS | 100 email/hari (cukup untuk MVP) |
+| Image Storage | Cloudinary Free | GRATIS | 25GB storage + bandwidth |
+| **TOTAL BULANAN** | | **Rp 108.500** | **~Rp 1.300.000/tahun** |
 
-#### Per Transaksi
-- Payment gateway fee: 0.5-3% dari total transaksi
-  - Contoh: Rental Rp 50.000 → fee Rp 250 - 1.500
+#### Per Transaksi (Payment Gateway - Midtrans)
+| Metode Pembayaran | Fee/Transaksi | Contoh (Rental Rp 50.000) |
+|-------------------|---------------|---------------------------|
+| Virtual Account (BCA, Mandiri, dll) | Rp 4.000 flat | Rp 4.000 (8%) |
+| QRIS | 0,7% | Rp 350 |
+| GoPay | 2% | Rp 1.000 |
+| ShopeePay | 1,5% | Rp 750 |
+| DANA | 1,5% | Rp 750 |
+| Kartu Kredit | 2,9% + Rp 2.000 | Rp 3.450 |
+| Indomaret/Alfamart | Rp 5.000 flat | Rp 5.000 (10%) |
+
+**Note**: 
+- Fee payment gateway ditanggung merchant (owner)
+- Bisa dibebankan ke customer dengan adjust harga final
+- Contoh: Harga rental Rp 50.000 → Harga final untuk customer Rp 54.000 (jika pakai VA)
+
+**Estimasi Biaya Payment Gateway per Bulan**:
+- Asumsi: 50 transaksi/bulan dengan rata-rata Rp 50.000
+- Asumsi 70% pakai VA/Transfer, 20% QRIS, 10% GoPay
+- Biaya: (35 × Rp 4.000) + (10 × Rp 350) + (5 × Rp 1.000) = Rp 148.500/bulan
+
+**Total Operasional Realistis**: Rp 108.500 (infrastruktur) + Rp 148.500 (payment) = **Rp 257.000/bulan**
+
+#### Optional Services (Jika Budget Ada)
+| Item | Provider | Harga/Bulan | Benefit |
+|------|----------|-------------|---------|
+| WhatsApp Notifikasi | Fonnte | Rp 350.000 | Unlimited message, auto reminder |
+| Backup Storage | AWS S3 | Rp 50.000 | Backup database offsite |
+| Monitoring | UptimeRobot Pro | $7 (~Rp 112.000) | Advanced monitoring, SMS alert |
+| Email (Upgrade) | SendGrid Essentials | $19.95 (~Rp 320.000) | 40.000 email/bulan |
+
+**Total dengan Optional**: Rp 257.000 + Rp 350.000 (WA) = **Rp 607.000/bulan** (jika include WA notification)
 
 ### Biaya Maintenance (Optional)
 - Bug fixes & minor updates: Rp 1.000.000 - 3.000.000/tahun
