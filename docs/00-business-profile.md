@@ -33,9 +33,6 @@
 - Tidak bisa cek ketersediaan sepeda
 - Tidak ada info harga transparan
 
-❌ **Tidak ada sistem booking**
-- Walk-in only
-- Risiko sepeda habis saat customer datang
 
 ❌ **Payment manual**
 - Transfer manual atau cash
