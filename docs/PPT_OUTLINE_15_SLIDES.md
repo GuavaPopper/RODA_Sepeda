@@ -232,14 +232,14 @@
 - Cache: Redis (optional)
 
 **Hosting & Infrastructure** ☁️
-- Domain: .com / .id (Rp 150-300k/tahun)
-- Hosting: VPS (DigitalOcean/Vultr) ~$5-10/bulan
+- Domain: (Domainesia).com / .id (Rp 150-300k/tahun)
+- Hosting: VPS (DigitalOcean) ~$5-10/bulan
 - SSL: Let's Encrypt (gratis)
 - CDN: Cloudflare (free tier)
 
 **Third-Party Services** 🔌
 - Payment: Midtrans (QRIS, e-wallet, transfer)
-- Email: SendGrid / Mailgun
+- Email: SendGrid
 - Storage: Supabase Storage (image hosting)
 
 **Development Tools** 🛠️
